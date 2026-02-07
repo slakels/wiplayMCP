@@ -10,6 +10,7 @@ Este proyecto implementa un servidor para gestionar reservas de pistas de pádel
 - **4 herramientas**: list_courts, check_availability, create_reservation, list_my_reservations
 - **API REST tradicional** para la interfaz web
 - **Interfaz web** HTML/JavaScript moderna y responsive
+- **Interfaz de chat** para interactuar mediante lenguaje natural
 - **Datos mock** para demostración (preparado para integración futura con APIs reales)
 
 > **Nota**: Este proyecto utiliza una implementación personalizada de herramientas tipo MCP a través de REST, ya que el SDK oficial de MCP Java está en desarrollo activo. La arquitectura está diseñada para facilitar la migración futura al SDK oficial cuando esté completamente estable.
@@ -23,13 +24,21 @@ Este proyecto implementa un servidor para gestionar reservas de pistas de pádel
 3. **create_reservation** - Crea una nueva reserva
 4. **list_my_reservations** - Lista las reservas de un usuario
 
-### Funcionalidades de la Interfaz Web
+### Funcionalidades de las Interfaces
 
+#### Interfaz Web (index.html)
 - ✅ Visualización de pistas disponibles con detalles
 - ✅ Verificación de disponibilidad por fecha
 - ✅ Reserva de pistas en horarios disponibles
 - ✅ Gestión de reservas personales
 - ✅ Diseño responsive y moderno
+
+#### Interfaz de Chat (chat.html)
+- ✅ Interacción mediante lenguaje natural
+- ✅ Procesamiento inteligente de comandos
+- ✅ Respuestas conversacionales
+- ✅ Acciones rápidas con botones
+- ✅ Mantiene contexto de la conversación
 
 ## 🛠️ Requisitos Previos
 
@@ -63,6 +72,7 @@ La aplicación se iniciará en: **http://localhost:8080**
 ### Endpoints disponibles
 
 - **Interfaz Web**: `http://localhost:8080/`
+- **Interfaz de Chat**: `http://localhost:8080/chat.html`
 - **API REST**: `http://localhost:8080/api/`
 - **Herramientas MCP**: `http://localhost:8080/mcp/tools/`
 - **Lista de herramientas**: `http://localhost:8080/mcp/tools`
@@ -78,6 +88,18 @@ La aplicación se iniciará en: **http://localhost:8080**
 5. Selecciona fecha y horario disponible
 6. Confirma tu reserva
 7. Revisa tus reservas en la pestaña "Mis Reservas"
+
+### Interfaz de Chat
+
+1. Abre tu navegador en `http://localhost:8080/chat.html`
+2. Ingresa tu nombre en el campo superior
+3. Escribe comandos en lenguaje natural, por ejemplo:
+   - "Muéstrame las pistas disponibles"
+   - "¿Está disponible la pista 1 para mañana?"
+   - "Reserva la pista central para hoy a las 10"
+   - "Ver mis reservas"
+4. Usa los botones rápidos para acciones comunes
+5. El chat mantiene contexto de la conversación para facilitar seguimientos
 
 ### API REST
 
