@@ -245,8 +245,17 @@ function showTab(tabName) {
     });
     
     // Mostrar el tab seleccionado
-    document.getElementById(tabName + '-tab').classList.add('active');
-    event.target.classList.add('active');
+    const selectedTab = document.getElementById(tabName + '-tab');
+    if (selectedTab) {
+        selectedTab.classList.add('active');
+    }
+    
+    // Marcar el botón como activo
+    const clickedButton = Array.from(document.querySelectorAll('.tab-button'))
+        .find(btn => btn.textContent.includes(tabName === 'courts' ? 'Ver Pistas' : 'Mis Reservas'));
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
     
     // Si cambiamos a reservas, cargar automáticamente
     if (tabName === 'reservations') {
@@ -316,7 +325,13 @@ function createReservationCard(reservation) {
  * Formatea una fecha de yyyy-MM-dd a formato legible
  */
 function formatDate(dateStr) {
-    const date = new Date(dateStr + 'T00:00:00');
+    // Parsear la fecha como UTC para evitar problemas de zona horaria
+    const parts = dateStr.split('-');
+    const year = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10) - 1; // Los meses van de 0-11
+    const day = parseInt(parts[2], 10);
+    
+    const date = new Date(year, month, day);
     const options = { 
         weekday: 'long', 
         year: 'numeric', 

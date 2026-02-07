@@ -184,18 +184,4 @@ public class McpToolsController {
         
         return ResponseEntity.ok(response);
     }
-    
-    /**
-     * GET /mcp/health - Health check
-     */
-    @GetMapping("/../health")
-    public ResponseEntity<Map<String, Object>> health() {
-        Map<String, Object> response = new HashMap<>();
-        response.put("status", "ok");
-        response.put("server", "wiplay-padel-mcp-server");
-        response.put("version", "1.0.0");
-        response.put("tools_count", 4);
-        
-        return ResponseEntity.ok(response);
-    }
 }
