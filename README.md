@@ -260,6 +260,13 @@ Este proyecto es un prototipo de demostración.
 
 Proyecto creado para Wiplay - Sistema de reservas de pistas de pádel
 
+## 📚 Documentación Adicional
+
+- **[CHAT_GUIDE.md](CHAT_GUIDE.md)** - Guía completa de la interfaz de chat
+- **[EXAMPLES.md](EXAMPLES.md)** - Ejemplos de uso de las APIs
+- **[MCP_ARCHITECTURE.md](MCP_ARCHITECTURE.md)** - Arquitectura técnica del servidor
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Resumen del proyecto
+
 ---
 
 **¿Preguntas o problemas?** Abre un issue en el repositorio.
