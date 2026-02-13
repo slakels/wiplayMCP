@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiplay Padel - Chat MCP</title>
+    <link rel="stylesheet" href="css/chat-style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="header-content">
+                <h1>🎾 Chat Wiplay Padel</h1>
+                <p class="subtitle">Reserva pistas mediante chat</p>
+            </div>
+            <div class="header-actions">
+                <a href="index.html" class="btn-link">Ver Interfaz Web</a>
+            </div>
+        </header>
+
+        <!-- Usuario -->
+        <section class="user-section">
+            <label for="userName">Tu nombre:</label>
+            <input type="text" id="userName" placeholder="Ingresa tu nombre" value="Juan Pérez">
+        </section>
+
+        <!-- Área de Chat -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p>¡Hola! Soy el asistente de Wiplay Padel. Puedo ayudarte a:</p>
+                    <ul>
+                        <li>Ver las pistas disponibles</li>
+                        <li>Consultar disponibilidad de una pista</li>
+                        <li>Hacer una reserva</li>
+                        <li>Ver tus reservas</li>
+                    </ul>
+                    <p>Escribe lo que necesites, por ejemplo:</p>
+                    <ul>
+                        <li>"Muéstrame las pistas"</li>
+                        <li>"¿Está disponible la pista 1 el 15 de febrero?"</li>
+                        <li>"Reserva la pista central para mañana a las 10"</li>
+                        <li>"¿Cuáles son mis reservas?"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input de Chat -->
+        <div class="chat-input-container">
+            <form id="chatForm" class="chat-form">
+                <input 
+                    type="text" 
+                    id="chatInput" 
+                    placeholder="Escribe tu mensaje aquí..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" class="btn-send">
+                    <span>Enviar</span>
+                    <span class="icon">➤</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Sugerencias rápidas -->
+        <div class="quick-actions">
+            <button class="quick-btn" onclick="sendQuickMessage('Muéstrame las pistas disponibles')">
+                📋 Ver pistas
+            </button>
+            <button class="quick-btn" onclick="sendQuickMessage('Muéstrame mis reservas')">
+                🎫 Mis reservas
+            </button>
+            <button class="quick-btn" onclick="sendQuickMessage('Ayuda')">
+                ❓ Ayuda
+            </button>
+        </div>
+    </div>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>

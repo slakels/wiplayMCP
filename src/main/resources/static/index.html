@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiplay Padel - Reservas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🎾 Wiplay Padel</h1>
+            <p class="subtitle">Sistema de Reservas de Pistas</p>
+            <div style="margin-top: 10px;">
+                <a href="chat.html" style="color: white; text-decoration: none; padding: 8px 16px; background: rgba(255,255,255,0.2); border-radius: 8px; font-size: 14px;">💬 Ir al Chat</a>
+            </div>
+        </header>
+
+        <!-- Sección de Usuario -->
+        <section class="user-section">
+            <label for="userName">Tu nombre:</label>
+            <input type="text" id="userName" placeholder="Ingresa tu nombre" value="Juan Pérez">
+        </section>
+
+        <!-- Navegación de Tabs -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('courts')">Ver Pistas</button>
+            <button class="tab-button" onclick="showTab('reservations')">Mis Reservas</button>
+        </div>
+
+        <!-- Tab 1: Pistas Disponibles -->
+        <section id="courts-tab" class="tab-content active">
+            <h2>Pistas Disponibles</h2>
+            <div id="courtsList" class="courts-grid">
+                <p class="loading">Cargando pistas...</p>
+            </div>
+        </section>
+
+        <!-- Tab 2: Mis Reservas -->
+        <section id="reservations-tab" class="tab-content">
+            <h2>Mis Reservas</h2>
+            <button class="btn btn-primary" onclick="loadMyReservations()">🔄 Actualizar</button>
+            <div id="reservationsList" class="reservations-list">
+                <p class="info">Haz clic en "Actualizar" para ver tus reservas</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal para Reservar -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Reservar Pista</h2>
+            <div id="modalCourtInfo"></div>
+            
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label for="reservationDate">Fecha:</label>
+                    <input type="date" id="reservationDate" required>
+                </div>
+                
+                <div id="timeSlotsContainer">
+                    <p class="info">Selecciona una fecha para ver horarios disponibles</p>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary" id="confirmBtn" disabled>Confirmar Reserva</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
